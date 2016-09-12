@@ -1,5 +1,3 @@
-root password: r3dh4t1\!
-
 # Connect to JUMP BOX
 export GUID=8cb8
 ssh -i ~/.ssh/opentlc gahealy-redhat.com@oselab-$GUID.oslab.opentlc.com
@@ -17,25 +15,10 @@ do
     sudo ssh $node.example.com "echo ose $node.example.com && systemctl status atomic-openshift-node.service"
 done
 
-
 ## Logins
 U: user1
 P: openshift
 https://loadbalancer1-8cb8.oslab.opentlc.com:8443
-
-
-oc get pods --all-namespaces
-
-/srv/nfs/pv01 *(rw,root_squash)
-/srv/nfs/pv02 *(rw,root_squash)
-/srv/nfs/pv03 *(rw,root_squash)
-/srv/nfs/pv04 *(rw,root_squash)
-/srv/nfs/cassandra *(rw,root_squash)
-
-
-
-persistentVolumeClaim:
-  claimName: elasticsearch-storage
 
 
 

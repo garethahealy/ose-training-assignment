@@ -36,7 +36,7 @@ openshift_master_default_subdomain=cloudapps-$GUID.oslab.opentlc.com
 
 # Configure metricsPublicURL in the master config for cluster metrics
 # See: https://docs.openshift.com/enterprise/latest/install_config/cluster_metrics.html
-openshift_master_metrics_public_url=https://metrics.cloudapps-$guid.oslab.opentlc.com
+openshift_master_metrics_public_url=https://metrics.cloudapps-$GUID.oslab.opentlc.com
 
 # Enable cockpit
 osm_use_cockpit=false

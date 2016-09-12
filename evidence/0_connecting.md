@@ -26,7 +26,16 @@ https://loadbalancer1-8cb8.oslab.opentlc.com:8443
 
 oc get pods --all-namespaces
 
+/srv/nfs/pv01 *(rw,root_squash)
+/srv/nfs/pv02 *(rw,root_squash)
+/srv/nfs/pv03 *(rw,root_squash)
+/srv/nfs/pv04 *(rw,root_squash)
+/srv/nfs/cassandra *(rw,root_squash)
 
+
+
+persistentVolumeClaim:
+  claimName: elasticsearch-storage
 
 
 

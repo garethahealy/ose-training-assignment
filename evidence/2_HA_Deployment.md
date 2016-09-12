@@ -14,13 +14,14 @@ node4-8cb8.oslab.opentlc.com     Ready                      16m       kubernetes
 node5-8cb8.oslab.opentlc.com     Ready                      16m       kubernetes.io/hostname=node5-8cb8.oslab.opentlc.com,region=primary,zone=tlc
 node6-8cb8.oslab.opentlc.com     Ready                      16m       kubernetes.io/hostname=node6-8cb8.oslab.opentlc.com,region=primary,zone=tlc
 
+#/etc/ansible/hosts extract:
 [masters]
 master1.example.com
 master2.example.com
 master3.example.com
 
 ##
-#b: There are 3 EtcD Instances working
+#b: There are 3 EtcD Instances working - /etc/ansible/hosts extract:
 [etcd]
 master1.example.com
 master2.example.com

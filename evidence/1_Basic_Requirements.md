@@ -1,5 +1,5 @@
 #a: Can authenticate at the master console
-See screenshots/user1-logged-in.png
+See: screenshots/user1-logged-in.png
 
 ##
 #b: Registry has Storage attached and working
@@ -14,6 +14,9 @@ registry-volume   5Gi        RWX           Bound     default/registry-claim     
 [root@master1-8cb8 ~]# oc get pvc
 NAME             STATUS    VOLUME            CAPACITY   ACCESSMODES   AGE
 registry-claim   Bound     registry-volume   5Gi        RWX           32m
+
+[root@master1-8cb8 ~]# oc get service docker-registry --template '{{.spec.portalIP}}:{{index .spec.ports 0 "port"}}/healthz'
+172.30.186.8:5000/healthz
 
 ##
 #c: Router is configured on each Infranodes

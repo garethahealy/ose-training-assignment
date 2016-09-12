@@ -22,14 +22,14 @@ openshift_master_ldap_ca_file=/root/ipa-ca.crt
 # balancer is present.
 openshift_master_cluster_method=native
 openshift_master_cluster_hostname=loadbalancer1.example.com
-openshift_master_cluster_public_hostname=loadbalancer1-$guid.oslab.opentlc.com
+openshift_master_cluster_public_hostname=loadbalancer1-$GUID.oslab.opentlc.com
 
 # default subdomain to use for exposed routes
-openshift_master_default_subdomain=cloudapps-$guid.oslab.opentlc.com
+openshift_master_default_subdomain=cloudapps-$GUID.oslab.opentlc.com
 
 # Configure metricsPublicURL in the master config for cluster metrics
 # See: https://docs.openshift.com/enterprise/latest/install_config/cluster_metrics.html
-openshift_master_metrics_public_url=https://metrics.cloudapps-$guid.oslab.opentlc.com
+openshift_master_metrics_public_url=https://metrics.cloudapps-$GUID.oslab.opentlc.com
 
 # Enable cockpit
 osm_use_cockpit=false

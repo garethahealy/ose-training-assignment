@@ -1,12 +1,5 @@
-3.Environment Configuration:
-
-
-
-d.Aggregated logging is configured and working
-e.Metrics Collection is configured and working
-
 ##
-#a: Multitenancy is configured and working
+#a: Multitenancy is configured and working - /etc/ansible/hosts extract:
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
 
 [root@master1-8cb8 ~]# oc get netnamespaces
@@ -65,5 +58,37 @@ finalizers:
 status:
 phase: Active
 
+##
+#d: Aggregated logging is configured and working
+[root@master1-8cb8 ~]# oc project
+Using project "logging" on server "https://loadbalancer1.example.com:8443".
 
-# deploy logging and metrics
+[root@master1-8cb8 ~]# oc get pods
+NAME                          READY     STATUS      RESTARTS   AGE
+logging-deployer-mzb64        0/1       Completed   0          1h
+logging-es-hnwvhnk6-3-rltjd   1/1       Running     0          19m
+logging-fluentd-1-aluhw       1/1       Running     0          17m
+logging-fluentd-1-ank91       1/1       Running     0          17m
+logging-fluentd-1-gou42       1/1       Running     0          17m
+logging-fluentd-1-ol4f5       1/1       Running     0          17m
+logging-fluentd-1-xlkm0       1/1       Running     0          17m
+logging-fluentd-1-ygxl6       1/1       Running     0          17m
+logging-kibana-1-eyu84        2/2       Running     4          52m
+
+[root@master1-8cb8 ~]# oc get pvc
+NAME                    STATUS    VOLUME        CAPACITY   ACCESSMODES   AGE
+elasticsearch-storage   Bound     pv03-volume   1Gi        RWO           20m
+
+##
+#e: Metrics Collection is configured and working
+See: screenshots/metrics.png
+
+[root@master1-8cb8 ~]# oc project
+Using project "openshift-infra" on server "https://loadbalancer1.example.com:8443".
+
+[root@master1-8cb8 ~]# oc get pods -o wide
+NAME                         READY     STATUS      RESTARTS   AGE       NODE
+hawkular-cassandra-1-opss4   1/1       Running     0          3d        infranode1.example.com
+hawkular-metrics-rtvcc       1/1       Running     1          3d        infranode2.example.com
+heapster-7a0dw               1/1       Running     1          3d        infranode2.example.com
+metrics-deployer-looll       0/1       Completed   0          3d        infranode1.example.com

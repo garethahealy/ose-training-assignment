@@ -1,5 +1,5 @@
 # ose training assignment
-See evidence for screenshots of deployed components and grep outputs.
+See "evidence" directory for screenshots of deployed components and grep outputs.
 
 - 1_Basic_Requirements.md
 - 2_HA_Deployment.md

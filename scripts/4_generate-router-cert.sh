@@ -3,7 +3,7 @@
 # https://help.github.com/enterprise/11.10.340/admin/articles/using-self-signed-ssl-certificates/
 rm -rf /root/certs
 mkdir /root/certs
-cd /root/certs
+cd /root/certs || exit
 
 openssl genrsa -out router-ca.key 2048
 openssl req -x509 -new -nodes -key router-ca.key -days 365 -out router-ca.crt -subj '/C=UK/ST=Yorkshire/L=Sheffield/CN=*.oslab.opentlc.com'

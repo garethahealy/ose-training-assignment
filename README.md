@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)]()
+
 # ose training assignment
 See "evidence" directory for screenshots of deployed components and grep outputs.
 
